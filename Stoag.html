@@ -124,6 +124,8 @@ border:solid 10px #3f413b;
 border-radius:30px;
 height:150px;
 }
+
+
 </style>
 
 
@@ -232,7 +234,7 @@ height:150px;
 
 </div>
 
-
+<button class="NextStation" onClick="randomQuote()">Next Station</button>
 </footer>
 
 
@@ -246,7 +248,7 @@ var NextDest = document.getElementById('NextDest').innerHTML;
 
 if (localStorage.getItem('Route') == '960'){
 document.getElementById('LineNummber').innerHTML = '960';
-document.getElementById('LineDest').innerHTML = 'Dümpten';
+document.getElementById('LineDest').innerHTML = 'Holten BF.';
 document.getElementById('NextDest').innerHTML = 'Mühlenhof';
 
 
@@ -265,4 +267,52 @@ document.getElementById('NextDest').innerHTML = 'Mühlenhof';
 
 
 }
+</script>
+
+
+
+
+
+
+
+<script>
+
+if (localStorage.getItem('Route') == '960'){
+
+var array = ['Mühlenhof','Kaisersfeld','Wehrstr.','Dieningstr.','Königsberger Str.','Knappenmarkt','Michaelkirche','Uhlandstr.','Liebknechtstr.','Ev. Krankenhaus','Rathaus','Oberhausen HBF.','Feuerwache','Lipperfeld','Neue Mitte','OLGA-Park','Eisenheim','MAN TURBO','Sterkrade Bf.','Rathaus Sterkrade','Hirsch-Center','Sterkrade Mitte','Hagelkreuz','Holtener Str.','Herz-Jesu-Kirche','Dragonerstr.','Kirchhellener Str.','Beethovenstr.','Bromberger Str.','Haus Gottesdank','Matzenbergstr.','Hohe Str.','Hartmannschule','Falkestr.','Buchenweg','Walsumermarkstr.','Hirschkamp','Lickumstr.','Flachsstr.','Köstersfeld','Eichsfeldstr.','Heinr.-Böll Ges.','Scham.-dorf Mitte','Tenter Str.','Oranien Str.','Pollsenweg','Franzstr.','Holten Bf.','Holten Bf.'];
+var cpt = 0;
+
+//Init the 'par' div before click
+document.querySelector("#NextDest").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+  if(cpt<array.length-1)
+    cpt++;
+  else
+    cpt=0;
+
+  document.querySelector("#NextDest").innerHTML = array[cpt];
+}
+
+}else {
+
+var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.stoag.de', 'STOAG'];
+var cpt = 0;
+
+//Init the 'par' div before click
+document.querySelector("#LineDest").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+  if(cpt<array.length-1)
+    cpt++;
+  else
+    cpt=0;
+
+  document.querySelector("#LineDest").innerHTML = array[cpt];
+}
+
+}
+
 </script>
