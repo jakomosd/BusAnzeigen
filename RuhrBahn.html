@@ -148,7 +148,9 @@ z-index:5;
 }
 .Transform5{
   transform: translate(170px,55px);
+  width:100%;
 z-index:5;
+
 }
 
 .TypeDIV{
@@ -166,6 +168,33 @@ font-size:30px;
 
 
 }
+
+.Type2{
+font-size:100px;
+
+
+}
+
+.TypeDIV2{
+background-color:#dc0a2f;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:0px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+.TypeDIV3{
+background-color:blue;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:0px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
 
 
 </style>
@@ -212,8 +241,8 @@ font-size:30px;
 <div class="Transform4">
 <font id="NextDest4" style="font-size:70px;"></font><br>
 </div>
-<div class="Transform5">
-<font id="NextDest5" style="font-size:75px;"></font><br>
+<div class="Transform5" id="Transform5">
+<font id="NextDest5" style="font-size:75px; "></font><br>
 </div>
 
 
@@ -229,10 +258,13 @@ font-size:30px;
 
 <footer>
 
-<div class="TypeDIV" id="TypeDIV"><div style="transform:translate(-10px,5px);"><label class="Type" id="Type">BUS</div></div>
+<div class="TypeDIV"  id="TypeDIV"  style="display:block;"><div style="transform:translate(-10px,5px);"><label class="Type" id="Type">BUS</div></div>
+<div class="TypeDIV2" id="TypeDIV2" style="display:none;"><div style="transform:translate(-13px,5px);"><label class="Type" id="Type">Tram</div></div>
+<div class="TypeDIV3" id="TypeDIV3" style="display:none;"><div style="transform:translate(-16px,-35px);"><label class="Type2" id="Type" style="font-weight:bold;">U</div></div>
 
 
-<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px);">Next Station</button><button class="NextStation" onClick="Color();">Stop</button>
+
+<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px);">Next Station</button><button class="NextStation" onClick="Color();">Stop</button><button class="NextStation" onClick="CType();">Change line type</button>
 <div style="transform:translate(30px,-670px); z-index:-1;"><img src="icons/indiN.png"></div>
 </footer>
 
@@ -252,7 +284,7 @@ document.getElementById('LineDest').innerHTML = 'OB-City Forum über <br> OB-Hbf
 
 }else{
 
-
+document.getElementById('LineNummber').innerHTML = '';
 
 
 
@@ -303,16 +335,16 @@ document.querySelector("#NextDest2").innerHTML = array[cpt2];
 document.querySelector("#NextDest3").innerHTML = array[cpt3];
 document.querySelector("#NextDest4").innerHTML = array[cpt4];
 document.querySelector("#NextDest5").innerHTML = array[cpt5];
-document.querySelector("#NextDest5").style.backgroundColor = '';
+document.querySelector("#Transform5").style.backgroundColor = '';
 
 }
 }else {
 
-var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.stoag.de', 'STOAG'];
+var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.ruhrbahn.de', 'RuhrBahn', 'Bitte nicht einsteigen', 'Fahrt endet hier'];
 var cpt = 0;
 
-//Init the 'par' div before click
-document.querySelector("#LineDest").innerHTML = array[cpt];
+
+document.querySelector("#NextDest5").innerHTML = array[cpt];
 
 function randomQuote () 
 {
@@ -321,7 +353,7 @@ function randomQuote ()
   else
     cpt=0;
 
-  document.querySelector("#LineDest").innerHTML = array[cpt];
+  document.querySelector("#NextDest5").innerHTML = array[cpt];
 }
 
 }
@@ -334,7 +366,7 @@ function Color(){
 
 
 
-document.querySelector('#NextDest5').style.backgroundColor = 'red';
+document.querySelector('#Transform5').style.backgroundColor = 'red';
 
 
 
@@ -342,6 +374,43 @@ document.querySelector('#NextDest5').style.backgroundColor = 'red';
 
 }
 
+
+
+
+
+</script>
+
+
+<script>
+
+function CType(){
+
+
+
+
+if (document.getElementById('TypeDIV').style.display == 'block'){
+document.getElementById('TypeDIV').style.display = 'none';
+document.getElementById('TypeDIV2').style.display = 'block';
+document.getElementById('TypeDIV3').style.display = 'none';
+
+}else if (document.getElementById('TypeDIV2').style.display == 'block'){
+document.getElementById('TypeDIV').style.display = 'none';
+document.getElementById('TypeDIV2').style.display = 'none';
+document.getElementById('TypeDIV3').style.display = 'block';
+
+
+}else if(document.getElementById('TypeDIV3').style.display == 'block'){
+document.getElementById('TypeDIV').style.display = 'block';
+document.getElementById('TypeDIV2').style.display = 'none';
+document.getElementById('TypeDIV3').style.display = 'none';
+
+}
+
+
+
+
+
+}
 
 
 
