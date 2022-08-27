@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<style>
+
+header{
+font-family:sans-serif;
+background-color:lime;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:20px;
+}
+
+body{
+font-family:arial;
+background-image: url('icons/bgRH.png');
+background-size: cover;
+background-attachment: fixed;
+overflow:hidden;
+color:white;
+}
+
+.auswahl{
+padding:20px;
+font-family:sans-serif;
+}
+
+.Anzeige{
+
+
+height:150px;
+
+
+}
+
+
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  
+  border-bottom: 80px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow-upNH {
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  
+  border-bottom: 50px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow{
+  transform: translate(-52px,-13px);
+}
+.TransformNHT{
+  transform: translate(227px,-78px);
+}
+
+.quadrad{
+height:68px;
+width:260px;
+background-color:black;
+
+}
+
+.section{
+height:190px;
+border-top:solid 0px black;
+}
+
+.Info{
+
+color:white;
+z-index:4;
+font-size:25px;
+
+}
+
+.InfoDIV{
+
+background-color:;
+}
+
+.Transform{
+  transform: translate(10px,-80px);
+
+}
+
+.TransformST{
+  transform: translate(58%, -535px);
+
+}
+
+.TransformNH{
+  transform: translate(10px, -100px);
+
+}
+
+.Line{
+  transform: translate(130px,-30px);
+
+}
+
+.LineDest{
+  transform: translate(500px,-185px);
+
+}
+
+.LineNH{
+  transform: translate(0px,0px);
+  color:#e0c000;
+}
+
+.chestNH{
+  transform: translate(0px,-40px);
+background-color:#0e0f0a;
+padding:30px;
+border:solid 10px #3f413b;
+border-radius:30px;
+height:150px;
+}
+
+.Transform1{
+  transform: translate(340px,-130px);
+z-index:5;
+}
+.Transform2{
+  transform: translate(250px,-115px);
+z-index:5;
+}
+.Transform3{
+  transform: translate(200px,-65px);
+z-index:5;
+}
+.Transform4{
+  transform: translate(180px,-5px);
+z-index:5;
+}
+.Transform5{
+  transform: translate(170px,55px);
+z-index:5;
+}
+
+.TypeDIV{
+background-color:#993399;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:10000px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+.Type{
+font-size:30px;
+
+
+}
+
+
+</style>
+
+
+<head>
+<title>Bus Anzeigen</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Bus.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+</head>
+
+
+
+
+<br>
+
+<body onload="Start();">
+<div class="Anzeige">
+
+
+
+<div class="Line">
+<label id="LineNummber" style="font-size:135px;"></label>
+</div>
+
+<div class="LineDest">
+<font id="LineDest" style="font-size:70px;"></font>
+</div>
+
+</div>
+
+<div style="background-color:white; height:4px; width:100%; " class="linec"></div>
+<div style="height:180px; width:100%; " class="linec"></div>
+
+<div class="Transform1">
+<font id="NextDest1" style="font-size:60px;"></font><br>
+</div>
+<div class="Transform2">
+<font id="NextDest2" style="font-size:65px;"></font><br>
+</div>
+<div class="Transform3">
+<font id="NextDest3" style="font-size:65px;"></font><br>
+</div>
+<div class="Transform4">
+<font id="NextDest4" style="font-size:70px;"></font><br>
+</div>
+<div class="Transform5">
+<font id="NextDest5" style="font-size:75px;"></font><br>
+</div>
+
+
+
+
+
+</div>
+
+
+
+</div>
+</body>
+
+<footer>
+
+<div class="TypeDIV" id="TypeDIV"><div style="transform:translate(-10px,5px);"><label class="Type" id="Type">BUS</div></div>
+
+
+<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px);">Next Station</button><button class="NextStation" onClick="Color();">Stop</button>
+<div style="transform:translate(30px,-670px); z-index:-1;"><img src="icons/indiN.png"></div>
+</footer>
+
+
+<script>
+
+function Start(){
+
+
+
+
+if (localStorage.getItem('Route') == '122'){
+document.getElementById('LineNummber').innerHTML = '122';
+document.getElementById('LineDest').innerHTML = 'OB-City Forum über <br> OB-Hbf.';
+
+
+
+}else{
+
+
+
+
+
+
+}
+
+
+
+
+
+
+}
+</script>
+
+
+
+
+
+
+
+<script>
+
+if (localStorage.getItem('Route') == '122'){
+
+var array = ['','Mülheim HBF.','Rathausmarkt','Stadtmitte','Schloßbroich','Rosendahl','Broicher Mitte','Kriegerstr.','Ulmenalle','Broicher Waldweg','Lierberg','Karlsruher Str.','Blötter Weg','Hochfelder Str.','Raffelberg','Theater an der Ruhr/Solbad','Schleuse Raffelberg','Stadion','Friesenstr.','Hauskampstr/Bf Styrum','Meidericher Str.','Steinmetztstr.','OB Akazienstr.','Josefstr.','Vincenzhaus','Anne-Frank-Realschule','Paul-Reusch-Str.','Oberhausen HBF.','Luise-Albertz-Halle','City-Forum','','','','',''];
+var cpt1 = 5;
+var cpt2 = 4;
+var cpt3 = 3;
+var cpt4 = 2;
+var cpt5 = 1;
+
+
+document.querySelector("#NextDest1").innerHTML = array[cpt1];
+document.querySelector("#NextDest2").innerHTML = array[cpt2];
+document.querySelector("#NextDest3").innerHTML = array[cpt3];
+document.querySelector("#NextDest4").innerHTML = array[cpt4];
+document.querySelector("#NextDest5").innerHTML = array[cpt5];
+
+function randomQuote () {
+  if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<array.length-1)
+    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
+	
+  else
+    cpt5=0;
+
+  document.querySelector("#NextDest1").innerHTML = array[cpt1];
+document.querySelector("#NextDest2").innerHTML = array[cpt2];
+document.querySelector("#NextDest3").innerHTML = array[cpt3];
+document.querySelector("#NextDest4").innerHTML = array[cpt4];
+document.querySelector("#NextDest5").innerHTML = array[cpt5];
+document.querySelector("#NextDest5").style.backgroundColor = '';
+
+}
+}else {
+
+var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.stoag.de', 'STOAG'];
+var cpt = 0;
+
+//Init the 'par' div before click
+document.querySelector("#LineDest").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+  if(cpt<array.length-1)
+    cpt++;
+  else
+    cpt=0;
+
+  document.querySelector("#LineDest").innerHTML = array[cpt];
+}
+
+}
+
+</script>
+
+<script>
+function Color(){
+
+
+
+
+document.querySelector('#NextDest5').style.backgroundColor = 'red';
+
+
+
+
+
+}
+
+
+
+
+
+</script>

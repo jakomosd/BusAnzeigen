@@ -43,12 +43,13 @@ font-family:sans-serif;
 
 <br>
 
-<body>
+<body onload="onLoad();">
 <center>
 <div class="auswahl">
 <label>Select route</label><br><br>
         <select id="Route" class="SelectProvider">
             <option value="960">960</option>
+			<option value="122">122</option>
 			<option value="Empty">Empty</option>
             
         </select><br><br><br>
@@ -57,7 +58,7 @@ font-family:sans-serif;
 
 
 <a href="Stoag.html"><button class="Stoag" >Stoag</button></a><br>
-<button class="RuhrBahn">Ruhr Bahn (Cooming Soon...)</button>
+<a href="RuhrBahn.html"><button class="RuhrBahn">Ruhr Bahn (Beta (at route end refresh page!))</button></a>
 
 
 
@@ -74,7 +75,34 @@ font-family:sans-serif;
 
 </footer>
 
+<script>
 
+
+	var c = document.getElementById("Route");
+function onLoad() {
+  var value = c.value;
+
+  console.log(value);
+  
+
+document.getElementById("Route").value = '960';
+
+
+localStorage.setItem('Route', value);
+
+  
+}
+c.onchange = onChange;
+onChange();
+
+
+
+
+
+
+
+
+</script>
 
 
 

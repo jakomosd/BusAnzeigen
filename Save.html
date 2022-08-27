@@ -1,0 +1,42 @@
+<script>
+function NextStation1(){
+
+if (localStorage.getItem('Route') == '960'){
+
+if (document.getElementById('LineDest').innerHTML == 'Holten BF.'){
+
+if (document.getElementById('NextDest').innerHTML == 'Mühlenhof'){
+
+document.getElementById('NextDest').innerHTML = 'Kaisersfeld';
+
+}else if (document.getElementById('NextDest').innerHTML == 'Kaisersfeld'){
+
+document.getElementById('NextDest').innerHTML = 'Wehrstr.';
+
+}else if(document.getElementById('NextDest').innerHTML == 'Wehrstr.'){
+
+document.getElementById('NextDest').innerHTML = 'Dieningstr.';
+
+}else if(document.getElementById('NextDest').innerHTML == 'Dieningstr.'){
+
+document.getElementById('NextDest').innerHTML = 'Königsberger Str.';
+
+}else if(document.getElementById('NextDest').innerHTML == 'Königsberger Str.'){
+
+document.getElementById('NextDest').innerHTML = 'Knappenmarkt';
+
+}else if(document.getElementById('NextDest').innerHTML == 'Knappenmarkt'){
+
+document.getElementById('NextDest').innerHTML = 'Michaelkirche';
+
+}else{}
+}else{}
+
+
+
+
+
+
+}
+}
+</script>

@@ -125,6 +125,25 @@ border-radius:30px;
 height:150px;
 }
 
+.icon{
+float:left;
+width:33%;
+background-color:;
+
+}
+
+.icon1{
+float:left;
+width:33%;
+background-color:;
+
+}
+
+.Stop{
+  transform: translate(0px,50px);
+
+
+}
 
 </style>
 
@@ -211,7 +230,14 @@ height:150px;
 <font id="NextDest" style="font-size:135px;"></font>
 </center>
 </div>
-<button class="NextStation" onClick="randomQuote()">Next Station</button>
+<button class="NextStation" onClick="randomQuote()">Next Station</button><button class="NextStation" onClick="Stop()">Stop</button>
+
+
+
+
+
+
+
 </div>
 
 
@@ -236,6 +262,26 @@ height:150px;
 
 </div>
 
+<div class="Stop" id="Stop" style="display:none;">
+<div class="icon">
+
+<img src="icons/Stop.png">
+
+
+</div>
+<div class="icon1">
+
+<center>
+<label style="font-size:77px; color:red;">Wagen hält</label>
+</center>
+</div>
+<div class="icon" style="text-align:right;">
+
+
+<img src="icons/Stop.png">
+
+</div>
+</div>
 
 </footer>
 
@@ -254,12 +300,16 @@ document.getElementById('LineDest').innerHTML = 'Holten BF.';
 document.getElementById('NextDest').innerHTML = 'Dümpten';
 
 
+}else if(localStorage.getItem('Route') == '122'){
+document.getElementById('LineNummber').innerHTML = '122';
+document.getElementById('LineDest').innerHTML = 'OB-City Forum';
+
+
+
+
+
+
 }else{
-
-
-
-
-
 
 }
 
@@ -295,9 +345,31 @@ function randomQuote ()
     cpt=0;
 
   document.querySelector("#NextDest").innerHTML = array[cpt];
+  document.getElementById('Stop').style.display = 'none';
+}
+
+}else if (localStorage.getItem('Route') == '122'){
+
+var array = ['Mülheim HBF.','Rathausmarkt','Stadtmitte','Schloßbroich','Rosendahl','Broicher Mitte','Kriegerstr.','Ulmenalle','Broicher Waldweg','Lierberg','Karlsruher Str.','Blötter Weg','Hochfelder Str.','Raffelberg','Theater an der Ruhr/Solbad','Schleuse Raffelberg','Stadion','Friesenstr.','Hauskampstr/Bf Styrum','Meidericher Str.','Steinmetztstr.','OB Akazienstr.','Josefstr.','Vincenzhaus','Anne-Frank-Realschule','Paul-Reusch-Str.','Oberhausen HBF.','Luise-Albertz-Halle','City-Forum'];
+var cpt = 0;
+
+//Init the 'par' div before click
+document.querySelector("#NextDest").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+  if(cpt<array.length-1)
+    cpt++;
+  else
+    cpt=0;
+
+  document.querySelector("#NextDest").innerHTML = array[cpt];
+  document.getElementById('Stop').style.display = 'none';
 }
 
 }else {
+
+
 
 var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.stoag.de', 'STOAG'];
 var cpt = 0;
@@ -313,8 +385,29 @@ function randomQuote ()
     cpt=0;
 
   document.querySelector("#LineDest").innerHTML = array[cpt];
+  document.getElementById('Stop').style.display = 'none';
+  
 }
 
 }
 
+</script>
+
+<script>
+
+function Stop(){
+
+
+document.getElementById('Stop').style.display = 'block';
+
+
+
+
+
+
+
+
+
+
+}
 </script>
