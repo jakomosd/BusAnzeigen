@@ -1,0 +1,35 @@
+.Stoag{
+	padding:10px;
+	border:solid 1px green;
+	background-color:white;
+	border-radius:10px;
+	margin-bottom:5px;
+}
+
+.Stoag:hover{
+	padding:10px;
+	border:solid 1px green;
+	background-color:green;
+	border-radius:10px;
+	margin-bottom:5px;
+	color:white;
+}
+
+
+
+.RuhrBahn{
+	padding:10px;
+	border:solid 1px yellow;
+	background-color:white;
+	border-radius:10px;
+	margin-bottom:5px;
+}
+
+.RuhrBahn:hover{
+	padding:10px;
+	border:solid 1px yellow;
+	background-color:yellow;
+	border-radius:10px;
+	margin-bottom:5px;
+	color:black;
+}

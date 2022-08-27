@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<style>
+
+header{
+font-family:sans-serif;
+background-color:lime;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:20px;
+}
+
+body{
+font-family:arial;
+background-image: linear-gradient(to left top, #daf2b5 30%, #b5f23e 80%);
+background-attachment: fixed;
+overflow-x:hidden;
+}
+
+.auswahl{
+padding:20px;
+font-family:sans-serif;
+}
+
+.Anzeige{
+
+
+
+
+
+
+
+}
+
+
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  
+  border-bottom: 80px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow-upNH {
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  
+  border-bottom: 50px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow{
+  transform: translate(-52px,-13px);
+}
+.TransformNHT{
+  transform: translate(227px,-78px);
+}
+
+.quadrad{
+height:68px;
+width:260px;
+background-color:black;
+
+}
+
+.section{
+height:190px;
+border-top:solid 3px black;
+}
+
+.Info{
+
+color:white;
+z-index:4;
+font-size:25px;
+
+}
+
+.InfoDIV{
+
+background-color:;
+}
+
+.Transform{
+  transform: translate(10px,-80px);
+
+}
+
+.TransformST{
+  transform: translate(58%, -535px);
+
+}
+
+.TransformNH{
+  transform: translate(10px, -100px);
+
+}
+
+.Line{
+  transform: translate(130px,-100px);
+
+}
+
+.LineNH{
+  transform: translate(0px,0px);
+  color:#e0c000;
+}
+
+.chestNH{
+  transform: translate(0px,-40px);
+background-color:#0e0f0a;
+padding:30px;
+border:solid 10px #3f413b;
+border-radius:30px;
+height:150px;
+}
+</style>
+
+
+<head>
+<title>Bus Anzeigen</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Bus.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+</head>
+
+
+
+
+<br>
+
+<body onload="Start();">
+<div class="Anzeige">
+
+<div class="section">
+
+<div class="arrow">
+<div class="arrow-up"></div>
+</div>
+
+<div class="Transform">
+<div class="InfoDIV">
+<img src="icons/Linie.png" height="30px">
+</div>
+</div>
+
+
+<div class="Line">
+<label id="LineNummber" style="font-size:135px;"></label>
+</div>
+
+
+
+</div>
+
+<div class="section">
+
+<div class="arrow">
+<div class="arrow-up"></div>
+</div>
+
+<div class="Transform">
+<div class="InfoDIV">
+<img src="icons/Nach.png" height="30px">
+</div>
+</div>
+
+
+<div class="Line">
+<font id="LineDest" style="font-size:135px;"></font>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="section">
+
+<div class="quadrad"></div>
+
+<div class="TransformNHT">
+<div class="arrow-upNH"></div>
+</div>
+
+<div class="TransformNH">
+<img src="icons/NH.png" height="30px">
+</div>
+
+
+
+<div class="chestNH">
+<div class="LineNH">
+<center>
+<font id="NextDest" style="font-size:135px;"></font>
+</center>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+</body>
+
+<footer>
+
+
+<div class="TransformST">
+
+<img src="icons/Stoag.png" height="100">
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+function Start(){
+
+var Line = document.getElementById('LineNummber').innerHTML;
+var LastDest = document.getElementById('LineDest').innerHTML;
+var NextDest = document.getElementById('NextDest').innerHTML;
+
+if (localStorage.getItem('Route') == '960'){
+document.getElementById('LineNummber').innerHTML = '960';
+document.getElementById('LineDest').innerHTML = 'Dümpten';
+document.getElementById('NextDest').innerHTML = 'Mühlenhof';
+
+
+}else{
+
+
+
+
+
+
+}
+
+
+
+
+
+
+}
+</script>
