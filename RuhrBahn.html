@@ -112,7 +112,7 @@ background-color:;
 }
 
 .LineDest{
-  transform: translate(500px,-185px);
+  transform: translate(500px,-165px);
 
 }
 
@@ -221,7 +221,7 @@ border:solid 1px white;
 </div>
 
 <div class="LineDest">
-<font id="LineDest" style="font-size:70px;"></font>
+<font id="LineDest" style="font-size:100px;"></font>
 </div>
 
 </div>
@@ -288,12 +288,16 @@ document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
 
 
 
+}else if (localStorage.getItem('Route') == 'Empty'){
+
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+
+
+
+
 }else{
 
-document.getElementById('LineNummber').innerHTML = '';
-
-
-
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
 
 }
 
