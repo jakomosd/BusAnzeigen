@@ -230,7 +230,7 @@ background-color:;
 <font id="NextDest" style="font-size:135px;"></font>
 </center>
 </div>
-<button class="NextStation" onClick="randomQuote()">Next Station</button><button class="NextStation" onClick="Stop()">Stop</button>
+<button class="NextStation" onClick="randomQuote()">Next Station</button><button class="NextStation" onClick="Stop()">Stop</button><button class="NextStation" onClick="Umdrehen()">↩</button>
 
 
 
@@ -305,12 +305,9 @@ document.getElementById('LineNummber').innerHTML = '122';
 document.getElementById('LineDest').innerHTML = 'OB-City Forum';
 
 
-
-
-
-
-}else{
-
+}else if(localStorage.getItem('Route') == 'SB98'){
+document.getElementById('LineNummber').innerHTML = 'SB98';
+document.getElementById('LineDest').innerHTML = 'Fröbelplatz';
 }
 
 
@@ -323,7 +320,41 @@ document.getElementById('LineDest').innerHTML = 'OB-City Forum';
 
 
 
+<script>
 
+function Umdrehen(){
+
+
+if (localStorage.getItem('Route') == '960'){
+if (document.getElementById('LineDest').innerHTML = 'Holten BF.'){
+document.getElementById('LineDest').innerHTML = 'Dümpten';
+}else{
+document.getElementById('LineDest').innerHTML = 'Holten BF.';
+}
+
+}else if(localStorage.getItem('Route') == '122'){
+if (document.getElementById('LineDest').innerHTML = 'OB-City Forum'){
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+}else{
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+}
+
+
+}else if(localStorage.getItem('Route') == 'SB98'){
+if (document.getElementById('LineDest').innerHTML = 'Fröbelplatz'){
+document.getElementById('LineDest').innerHTML = 'Falkestr.';
+}else{
+document.getElementById('LineDest').innerHTML = 'Fröbelplatz';
+}
+}
+
+
+
+
+
+
+}
+</script>
 
 
 
@@ -331,45 +362,115 @@ document.getElementById('LineDest').innerHTML = 'OB-City Forum';
 
 if (localStorage.getItem('Route') == '960'){
 
-var array = ['Dümpten','Mühlenhof','Kaisersfeld','Wehrstr.','Dieningstr.','Königsberger Str.','Knappenmarkt','Michaelkirche','Uhlandstr.','Liebknechtstr.','Ev. Krankenhaus','Rathaus','Oberhausen HBF.','Feuerwache','Lipperfeld','Neue Mitte','OLGA-Park','Eisenheim','MAN TURBO','Sterkrade Bf.','Rathaus Sterkrade','Hirsch-Center','Sterkrade Mitte','Hagelkreuz','Holtener Str.','Herz-Jesu-Kirche','Dragonerstr.','Kirchhellener Str.','Beethovenstr.','Bromberger Str.','Haus Gottesdank','Matzenbergstr.','Hohe Str.','Hartmannschule','Falkestr.','Buchenweg','Walsumermarkstr.','Hirschkamp','Lickumstr.','Flachsstr.','Köstersfeld','Eichsfeldstr.','Heinr.-Böll Ges.','Scham.-dorf Mitte','Tenter Str.','Oranien Str.','Pollsenweg','Franzstr.','Holten Bf.','Holten Bf.'];
+var array = ['Dümpten','Mühlenhof','Kaisersfeld','Wehrstr.','Dieningstr.','Königsberger Str.','Knappenmarkt','Michaelkirche','Uhlandstr.','Liebknechtstr.','Ev. Krankenhaus','Rathaus','Oberhausen HBF.','Feuerwache','Lipperfeld','Neue Mitte','OLGA-Park','Eisenheim','MAN TURBO','Sterkrade Bf.','Rathaus Sterkrade','Hirsch-Center','Sterkrade Mitte','Hagelkreuz','Holtener Str.','Herz-Jesu-Kirche','Dragonerstr.','Kirchhellener Str.','Beethovenstr.','Bromberger Str.','Haus Gottesdank','Matzenbergstr.','Hohe Str.','Hartmannschule','Falkestr.','Buchenweg','Walsumermarkstr.','Hirschkamp','Lickumstr.','Flachsstr.','Köstersfeld','Eichsfeldstr.','H.Böll Gesamts.','Scham.-dorf Mitte','Tenter Str.','Oranien Str.','Pollsenweg','Franzstr.','Holten Bf.','Holten Bf.'];
+var array1 = ['Dümpten','Mühlenhof','Kaisersfeld','Wehrstr.','Dieningstr.','Königsberger Str.','Knappenmarkt','Michaelkirche','Uhlandstr.','Liebknechtstr.','Ev. Krankenhaus','Rathaus','Oberhausen HBF.','Feuerwache','Lipperfeld','Neue Mitte','OLGA-Park','Eisenheim','MAN TURBO','Sterkrade Bf.','Rathaus Sterkrade','Hirsch-Center','Sterkrade Mitte','Hagelkreuz','Holtener Str.','Herz-Jesu-Kirche','Dragonerstr.','Kirchhellener Str.','Beethovenstr.','Bromberger Str.','Haus Gottesdank','Matzenbergstr.','Hohe Str.','Hartmannschule','Falkestr.','Buchenweg','Walsumermarkstr.','Hirschkamp','Lickumstr.','Flachsstr.','Köstersfeld','Eichsfeldstr.','H.Böll Gesamts.','Scham.-dorf Mitte','Tenter Str.','Oranien Str.','Pollsenweg','Franzstr.','Holten Bf.','Holten Bf.'];
 var cpt = 0;
-
+var reversed = array1.reverse();
 //Init the 'par' div before click
+
 document.querySelector("#NextDest").innerHTML = array[cpt];
 
 function randomQuote () 
 {
+
+if (document.getElementById("LineDest").innerHTML == 'Holten BF.'){
   if(cpt<array.length-1)
+    cpt++;
+	
+  else
+    cpt=0;
+console.log('1')
+  document.querySelector("#NextDest").innerHTML = array[cpt];
+  document.getElementById('Stop').style.display = 'none';
+  
+  }else if (document.getElementById("LineDest").innerHTML == 'Dümpten'){
+  
+    if (cpt<reversed.length-1)
+	
     cpt++;
   else
     cpt=0;
-
-  document.querySelector("#NextDest").innerHTML = array[cpt];
+console.log('2')
+  document.querySelector("#NextDest").innerHTML = reversed[cpt];
   document.getElementById('Stop').style.display = 'none';
-}
+  }
+  
+} 
 
 }else if (localStorage.getItem('Route') == '122'){
 
 var array = ['Mülheim HBF.','Rathausmarkt','Stadtmitte','Schloßbroich','Rosendahl','Broicher Mitte','Kriegerstr.','Ulmenalle','Broicher Waldweg','Lierberg','Karlsruher Str.','Blötter Weg','Hochfelder Str.','Raffelberg','Theater an der Ruhr/Solbad','Schleuse Raffelberg','Stadion','Friesenstr.','Hauskampstr/Bf Styrum','Meidericher Str.','Steinmetztstr.','OB Akazienstr.','Josefstr.','Vincenzhaus','Anne-Frank-Realschule','Paul-Reusch-Str.','Oberhausen HBF.','Luise-Albertz-Halle','City-Forum'];
+var array1 = ['Mülheim HBF.','Rathausmarkt','Stadtmitte','Schloßbroich','Rosendahl','Broicher Mitte','Kriegerstr.','Ulmenalle','Broicher Waldweg','Lierberg','Karlsruher Str.','Blötter Weg','Hochfelder Str.','Raffelberg','Theater an der Ruhr/Solbad','Schleuse Raffelberg','Stadion','Friesenstr.','Hauskampstr/Bf Styrum','Meidericher Str.','Steinmetztstr.','OB Akazienstr.','Josefstr.','Vincenzhaus','Anne-Frank-Realschule','Paul-Reusch-Str.','Oberhausen HBF.','Luise-Albertz-Halle','City-Forum'];
 var cpt = 0;
-
+var reversed = array1.reverse();
 //Init the 'par' div before click
 document.querySelector("#NextDest").innerHTML = array[cpt];
 
 function randomQuote () 
 {
+
+if (document.getElementById("LineDest").innerHTML == 'OB-City Forum'){
   if(cpt<array.length-1)
+    cpt++;
+	
+  else
+    cpt=0;
+console.log('1')
+  document.querySelector("#NextDest").innerHTML = array[cpt];
+  document.getElementById('Stop').style.display = 'none';
+  
+  }else if (document.getElementById("LineDest").innerHTML == 'Mülheim HBF.'){
+  
+    if (cpt<reversed.length-1)
+	
     cpt++;
   else
     cpt=0;
+console.log('2')
+  document.querySelector("#NextDest").innerHTML = reversed[cpt];
+  document.getElementById('Stop').style.display = 'none';
+  }
+  
+} 
 
+
+}else if (localStorage.getItem('Route') == 'SB98'){
+
+var array = ['OB Falkestr.','Buchenweg','Prinzen Str.','Ebereschenweg','Julius-B.-Anger','H. Böll Gesamts.','Schm.dorf Mitte','Martin Str.','Jäger Str.','Ludwigshütte','Hagelkreuz','Neumarkt','OB-Sterkrade BF. "4"','MAN Turbo','Eisenheim','OLGA-Park','Neue Mitte OB','Lipperfeld','Feuerwache','Oberhausen HBF.','Bero-Zentrum-Süd','Hans-Sachs-Kolleg','Bebelstr.','Alstadener Str.','Flockenfeld','Rehmer','Alsterfeld','Zeche Alstaden','Blockstr.','Fröbelplatz'];
+var array1 = ['OB Falkestr.','Buchenweg','Prinzen Str.','Ebereschenweg','Julius-B.-Anger','H. Böll Gesamts.','Schm.dorf Mitte','Martin Str.','Jäger Str.','Ludwigshütte','Hagelkreuz','Neumarkt','OB-Sterkrade BF. "4"','MAN Turbo','Eisenheim','OLGA-Park','Neue Mitte OB','Lipperfeld','Feuerwache','Oberhausen HBF.','Bero-Zentrum-Süd','Hans-Sachs-Kolleg','Bebelstr.','Alstadener Str.','Flockenfeld','Rehmer','Alsterfeld','Zeche Alstaden','Blockstr.','Fröbelplatz'];
+var cpt = 0;
+var reversed = array1.reverse();
+//Init the 'par' div before click
+document.querySelector("#NextDest").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+
+if (document.getElementById("LineDest").innerHTML == 'Fröbelplatz'){
+  if(cpt<array.length-1)
+    cpt++;
+	
+  else
+    cpt=0;
+console.log('1')
   document.querySelector("#NextDest").innerHTML = array[cpt];
   document.getElementById('Stop').style.display = 'none';
-}
+  
+  }else if (document.getElementById("LineDest").innerHTML == 'Falkestr.'){
+  
+    if (cpt<reversed.length-1)
+	
+    cpt++;
+  else
+    cpt=0;
+console.log('2')
+  document.querySelector("#NextDest").innerHTML = reversed[cpt];
+  document.getElementById('Stop').style.display = 'none';
+  }
+  
+} 
 
-}else {
-
-
+}else{
 
 var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.stoag.de', 'STOAG', 'Nicht einsteigen', 'Fahrt endet hier!'];
 var cpt = 0;
@@ -390,6 +491,8 @@ function randomQuote ()
 }
 
 }
+
+
 
 </script>
 

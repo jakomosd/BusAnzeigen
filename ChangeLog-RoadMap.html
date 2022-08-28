@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<style>
+
+header{
+font-family:sans-serif;
+background-color:lime;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:20px;
+
+}
+
+body{
+font-family:sans-serif;
+
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+.auswahl{
+padding:20px;
+font-family:sans-serif;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0s;
+  padding-top: 60px;
+  padding-left: 20px;
+  font-family:sans-serif;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: gray;
+  display: block;
+  transition: 0.3s;
+  border-left:solid 5px blue;
+  background-color:#f0f0f0;
+  margin-bottom:3px;
+  border-radius:5px;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0s;
+  padding-left: 50px;
+  padding-top: 50px;
+  border-left:solid 0px gray;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.container{
+
+background-color:#f0f0f0;
+width:150px;
+border-radius:20px;
+float:left;
+margin-right:10px;
+padding:10px;
+}
+
+.Title{
+font-weight:bold;
+font-size:30px;
+}
+
+.Dec{
+font-weight:;
+font-size:20px;
+}
+
+.Status1{
+font-weight:;
+font-size:20px;
+color:lime;
+}
+
+.Status2{
+font-weight:;
+font-size:20px;
+color:orange;
+}
+
+.Status3{
+font-weight:;
+font-size:20px;
+color:red;
+}
+</style>
+
+
+<head>
+<title>Bus Anzeigen</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Bus.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+</head>
+
+<div id="mySidenav" class="sidenav">
+
+  <a href="#ChangeLog">Change Logs</a>
+  <a href="#RoadMap">Road Map</a>
+
+</div>
+
+
+<header>
+
+<label style="margin-right:20px;"> Bus Anzeigen</label>
+
+<a href="index.html"><button class="standart">Startseite</button></a>
+
+
+
+
+
+
+
+
+</header>
+
+
+<br>
+<div id="main">
+<body onload="openNav();">
+
+
+<label style="font-size:40px;" id="ChangeLog"><b>Change Log</b></label>
+<hr style="border:solid 0px; height:2px; background-color:silver;">
+<label style="font-size:15px;" >v2.0</label><br>
+<label style="font-size:25px;" ><b>Bug fixes:</b></label><br><br>
+<label style="font-size:25px;" >• No bug fixes</label><br><br>
+
+<label style="font-size:25px;" ><b>New features:</b></label><br><br>
+<label style="font-size:25px;" >• New Line (SB98) for Stoag</label><br>
+<label style="font-size:25px;" >• You can now reverse the line with the button next to the "Stop" button.</label><br>
+
+<br><br><br><br><br>
+<label style="font-size:15px;" >v1.5</label><br>
+<label style="font-size:25px;" ><b>Bug fixes:</b></label><br><br>
+<label style="font-size:25px;" >• No bug fixes</label><br><br>
+
+<label style="font-size:25px;" ><b>New features:</b></label><br><br>
+<label style="font-size:25px;" >• New company called RuhrBahn</label><br>
+<label style="font-size:25px;" >• New Line called 122 for RuhrBahn and Stoag</label><br>
+<label style="font-size:25px;" >• Line Type changeable in RuhrBahn by clicking button next to "Stop".</label><br>
+
+
+
+
+
+
+
+
+
+<div style="height:100px;"></div>
+<label style="font-size:40px;" id="RoadMap"><b>Road Map</b></label>
+<hr style="border:solid 0px; height:2px; background-color:silver;">
+<center>
+<div class="container"><font class="Title">New line X42</font><br><br>
+<font class="Dec">Adding a new line called X42 from Stoag.</font> <br>
+<div style="height:10px;  background-color:;"></div>
+
+<img src="icons/Austehend.png" height="50px"><br>
+<font class="Status2">Austehend</font> 
+
+
+
+</div>
+
+
+
+
+
+<div class="container"><font class="Title">Station announ-<br>cements</font><br><br>
+<font class="Dec">Adding Station announcements and then can be played by clicking a button.</font> <br>
+<div style="height:10px;  background-color:;"></div>
+
+<img src="icons/Austehend.png" height="50px"><br>
+<font class="Status2">Austehend</font> 
+
+
+
+
+</div>
+
+
+
+</center>
+</div>
+<div style="height:400px; width:100%; background-color:;"></div>
+</body>
+
+<footer>
+
+
+
+
+
+</footer>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+

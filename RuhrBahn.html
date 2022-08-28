@@ -264,7 +264,7 @@ border:solid 1px white;
 
 
 
-<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px);">Next Station</button><button class="NextStation" onClick="Color();">Stop</button><button class="NextStation" onClick="CType();">Change line type</button>
+<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px);">Next Station</button><button class="NextStation" onClick="Color();">Stop</button><button class="NextStation" onClick="CType();">Change line type</button><button class="NextStation" onClick="Umdrehen()">↩</button>
 <div style="transform:translate(30px,-670px); z-index:-1;"><img src="icons/indiN.png"></div>
 </footer>
 
@@ -278,7 +278,7 @@ function Start(){
 
 if (localStorage.getItem('Route') == '122'){
 document.getElementById('LineNummber').innerHTML = '122';
-document.getElementById('LineDest').innerHTML = 'OB-City Forum über <br> OB-Hbf.';
+document.getElementById('LineDest').innerHTML = 'OB-City Forum';
 
 
 
@@ -300,7 +300,26 @@ document.getElementById('LineNummber').innerHTML = '';
 </script>
 
 
+<script>
 
+function Umdrehen(){
+
+
+if (localStorage.getItem('Route') == '122'){
+if (document.getElementById('LineDest').innerHTML = 'OB-City Forum '){
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+}else{
+document.getElementById('LineDest').innerHTML = 'OB-City Forum ';
+}
+
+}
+
+
+
+
+
+}
+</script>
 
 
 
@@ -310,12 +329,13 @@ document.getElementById('LineNummber').innerHTML = '';
 if (localStorage.getItem('Route') == '122'){
 
 var array = ['','Mülheim HBF.','Rathausmarkt','Stadtmitte','Schloßbroich','Rosendahl','Broicher Mitte','Kriegerstr.','Ulmenalle','Broicher Waldweg','Lierberg','Karlsruher Str.','Blötter Weg','Hochfelder Str.','Raffelberg','Theater an der Ruhr/Solbad','Schleuse Raffelberg','Stadion','Friesenstr.','Hauskampstr/Bf Styrum','Meidericher Str.','Steinmetztstr.','OB Akazienstr.','Josefstr.','Vincenzhaus','Anne-Frank-Realschule','Paul-Reusch-Str.','Oberhausen HBF.','Luise-Albertz-Halle','City-Forum','','','','',''];
+var array1 = ['','','','','','Mülheim HBF.','Rathausmarkt','Stadtmitte','Schloßbroich','Rosendahl','Broicher Mitte','Kriegerstr.','Ulmenalle','Broicher Waldweg','Lierberg','Karlsruher Str.','Blötter Weg','Hochfelder Str.','Raffelberg','Theater an der Ruhr/Solbad','Schleuse Raffelberg','Stadion','Friesenstr.','Hauskampstr/Bf Styrum','Meidericher Str.','Steinmetztstr.','OB Akazienstr.','Josefstr.','Vincenzhaus','Anne-Frank-Realschule','Paul-Reusch-Str.','Oberhausen HBF.','Luise-Albertz-Halle','City-Forum','',''];
 var cpt1 = 5;
 var cpt2 = 4;
 var cpt3 = 3;
 var cpt4 = 2;
 var cpt5 = 1;
-
+var reversed = array1.reverse();
 
 document.querySelector("#NextDest1").innerHTML = array[cpt1];
 document.querySelector("#NextDest2").innerHTML = array[cpt2];
@@ -323,7 +343,13 @@ document.querySelector("#NextDest3").innerHTML = array[cpt3];
 document.querySelector("#NextDest4").innerHTML = array[cpt4];
 document.querySelector("#NextDest5").innerHTML = array[cpt5];
 
-function randomQuote () {
+
+
+
+function randomQuote () 
+{
+
+if (document.getElementById("LineDest").innerHTML == 'OB-City Forum'){
   if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<array.length-1)
     cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
 	
@@ -336,8 +362,31 @@ document.querySelector("#NextDest3").innerHTML = array[cpt3];
 document.querySelector("#NextDest4").innerHTML = array[cpt4];
 document.querySelector("#NextDest5").innerHTML = array[cpt5];
 document.querySelector("#Transform5").style.backgroundColor = '';
+  
+  }else if (document.getElementById("LineDest").innerHTML == 'Mülheim HBF.'){
+  
+ if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<reversed.length-1)
+    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
+	
+  else
+    cpt5=0;
 
-}
+  document.querySelector("#NextDest1").innerHTML = reversed[cpt1];
+document.querySelector("#NextDest2").innerHTML = reversed[cpt2];
+document.querySelector("#NextDest3").innerHTML = reversed[cpt3];
+document.querySelector("#NextDest4").innerHTML = reversed[cpt4];
+document.querySelector("#NextDest5").innerHTML = reversed[cpt5];
+document.querySelector("#Transform5").style.backgroundColor = '';
+  }
+  
+} 
+
+
+
+
+
+
+
 }else {
 
 var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.ruhrbahn.de', 'RuhrBahn', 'Bitte nicht einsteigen', 'Fahrt endet hier'];
