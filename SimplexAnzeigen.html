@@ -426,68 +426,11 @@ document.querySelector("#NextDest5").style.color = '#00B0F0';
 
 
 
-}else if (localStorage.getItem('Route') == 'U18'){
-
-var array = ['','Essen Berliner Platz','Hirschlandplatz','Essen HBF','Bismarckplatz','Savignystr/ETEC','Hobeisenbrücke','Breslauer Str.','Wickenburgstr.','MH-RH.Ruhr-Zentrum','Rosendeller Str.','Eichbaum','Heißen Kirchen','Mühlenfeld','Christianstr.','Gracht','Von-Bock-Str.','Mülheim HBF.','','','','',''];
-var array1 = ['','','','','','Essen Berliner Platz','Hirschlandplatz','Essen HBF','Bismarckplatz','Savignystr/ETEC','Hobeisenbrücke','Breslauer Str.','Wickenburgstr.','MH-RH.Ruhr-Zentrum','Rosendeller Str.','Eichbaum','Heißen Kirchen','Mühlenfeld','Christianstr.','Gracht','Von-Bock-Str.','Mülheim HBF.','',''];
-var cpt1 = 5;
-var cpt2 = 4;
-var cpt3 = 3;
-var cpt4 = 2;
-var cpt5 = 1;
-var reversed = array1.reverse();
-
-document.querySelector("#NextDest1").innerHTML = array[cpt1];
-document.querySelector("#NextDest2").innerHTML = array[cpt2];
-document.querySelector("#NextDest3").innerHTML = array[cpt3];
-document.querySelector("#NextDest4").innerHTML = array[cpt4];
-document.querySelector("#NextDest5").innerHTML = array[cpt5];
-
-
-
-
-function randomQuote () 
-{
-
-if (document.getElementById("LineDest").innerHTML == 'Mülheim HBF.'){
-  if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<array.length-1)
-    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
-	
-  else
-    cpt5=0;
-
-  document.querySelector("#NextDest1").innerHTML = array[cpt1];
-document.querySelector("#NextDest2").innerHTML = array[cpt2];
-document.querySelector("#NextDest3").innerHTML = array[cpt3];
-document.querySelector("#NextDest4").innerHTML = array[cpt4];
-document.querySelector("#NextDest5").innerHTML = array[cpt5];
-document.querySelector("#Transform5").style.backgroundColor = 'white';
-document.querySelector("#NextDest5").style.color = '#00B0F0';
-  
-  }else if (document.getElementById("LineDest").innerHTML == 'Essen Berliner Platz'){
-  
- if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<reversed.length-1)
-    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
-	
-  else
-    cpt5=0;
-
-  document.querySelector("#NextDest1").innerHTML = reversed[cpt1];
-document.querySelector("#NextDest2").innerHTML = reversed[cpt2];
-document.querySelector("#NextDest3").innerHTML = reversed[cpt3];
-document.querySelector("#NextDest4").innerHTML = reversed[cpt4];
-document.querySelector("#NextDest5").innerHTML = reversed[cpt5];
-document.querySelector("#Transform5").style.backgroundColor = 'white';
-document.querySelector("#NextDest5").style.color = '#00B0F0';
-  }
-  
-} 
-
 
 
 }else {
 
-var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.ruhrbahn.de', 'RuhrBahn', 'Bitte nicht einsteigen', 'Fahrt endet hier'];
+var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.simplex.tk', 'SIMPLEX', 'Bitte nicht einsteigen', 'Fahrt endet hier'];
 var cpt = 0;
 
 
