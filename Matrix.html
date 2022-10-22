@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <style>
-
+@import url('http://fonts.cdnfonts.com/css/dot-matrix');
 header{
 font-family:sans-serif;
 background-color:lime;
@@ -12,8 +12,9 @@ font-size:20px;
 }
 
 body{
-font-family:arial;
-background-image: linear-gradient(to left top, #daf2b5 30%, #b5f23e 80%);
+font-family: 'Dot Matrix', sans-serif;
+
+background-color:black;
 background-attachment: fixed;
 overflow-x:hidden;
 }
@@ -163,38 +164,19 @@ background-color:;
 
 <div class="Anzeige">
 
-<div class="section">
-
-<div class="arrow">
-<div class="arrow-up"></div>
-</div>
-
-<div class="Transform">
-<div class="InfoDIV">
-<img src="icons/Linie.png" height="30px">
-</div>
-</div>
-
-
-<div class="Line">
-<label id="LineNummber" style="font-size:135px;"></label>
-</div>
 
 
 
-</div>
 
-<div class="section">
 
-<div class="arrow">
-<div class="arrow-up"></div>
-</div>
 
-<div class="Transform">
-<div class="InfoDIV">
-<img src="icons/Nach.png" height="30px">
-</div>
-</div>
+
+
+
+
+
+
+
 
 
 <div class="Line">
@@ -210,26 +192,22 @@ background-color:;
 
 </div>
 
-<div class="section">
-
-<div class="quadrad"></div>
-
-<div class="TransformNHT">
-<div class="arrow-upNH"></div>
-</div>
-
-<div class="TransformNH">
-<img src="icons/NH.png" height="30px">
-</div>
 
 
 
-<div class="chestNH">
-<div class="LineNH">
-<center>
-<font id="NextDest" style="font-size:135px;"></font>
-</center>
-</div>
+<label style="color:white;" id="timer"></label>
+
+
+
+
+
+
+
+
+<div style="width:100%; background-color:; text-align:center; transform:translate(0px,100px); display:block;" id="LN"><label id="LineNummber" style="font-size:150px; color:orange;"></label></div><br>
+<div style="width:100%; text-align:center; background-color:; " id="ND"><font id="NextDest" style="font-size:150px; color:orange;"></font></div>
+
+<br><br><br><br>
 <button class="NextStation" onClick="randomQuote()">Next Station</button><button class="NextStation" onClick="Stop()">Stop</button><button class="NextStation" onClick="Umdrehen()">↩</button>
 
 
@@ -238,7 +216,6 @@ background-color:;
 
 
 
-</div>
 
 
 
@@ -246,41 +223,28 @@ background-color:;
 
 
 
-</div>
 
 
 
-</div>
+
+
+
 </body>
 
 <footer>
 
 
-<div class="TransformST">
 
-<img src="icons/Stoag.png" height="100">
-
-</div>
 
 <div class="Stop" id="Stop" style="display:none;">
-<div class="icon">
-
-<img src="icons/Stop.png">
 
 
-</div>
-<div class="icon1">
 
 <center>
 <label style="font-size:77px; color:red;">Wagen hält</label>
 </center>
-</div>
-<div class="icon" style="text-align:right;">
 
 
-<img src="icons/Stop.png">
-
-</div>
 </div>
 
 </footer>
@@ -295,7 +259,7 @@ var LastDest = document.getElementById('LineDest').innerHTML;
 var NextDest = document.getElementById('NextDest').innerHTML;
 
 if (localStorage.getItem('Route') == '960'){
-document.getElementById('LineNummber').innerHTML = '960';
+document.getElementById('LineNummber').innerHTML = 'Linie 960';
 document.getElementById('LineDest').innerHTML = 'Holten BF.';
 document.getElementById('NextDest').innerHTML = 'Dümpten';
 
@@ -517,4 +481,34 @@ document.getElementById('Stop').style.display = 'block';
 
 
 }
+</script>
+
+
+
+
+
+
+<script>
+window.onload = function() {
+  var minute = 0;
+  var sec = 5;
+  var timer = document.getElementById("timer");
+  setInterval(function() {
+    if (sec === 0) {
+      timer.innerHTML = minute + " : " + sec;
+      if (minute === 0 && sec === 0) {
+	  
+
+document.getElementById('LN').style.display = 'block';
+document.getElementById('ND').style.display = 'none';
+      }
+      minute--;
+      sec = 60;
+    } else {
+     timer.innerHTML = minute + " : " + sec;
+    }
+    sec--;
+  }, 1000);
+}
+
 </script>

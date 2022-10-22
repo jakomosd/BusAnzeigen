@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<style>
+
+header{
+font-family:sans-serif;
+background-color:lime;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:20px;
+}
+
+body{
+font-family:arial;
+overflow:hidden;
+}
+
+.auswahl{
+padding:20px;
+font-family:sans-serif;
+}
+
+.Anzeige{
+
+
+height:150px;
+
+
+}
+
+
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  
+  border-bottom: 80px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow-upNH {
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  
+  border-bottom: 50px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow{
+  transform: translate(-52px,-13px);
+}
+.TransformNHT{
+  transform: translate(227px,-78px);
+}
+
+.quadrad{
+height:68px;
+width:260px;
+background-color:black;
+
+}
+
+.section{
+height:190px;
+border-top:solid 0px black;
+}
+
+.Info{
+
+color:white;
+z-index:4;
+font-size:25px;
+
+}
+
+.InfoDIV{
+
+background-color:;
+}
+
+.Transform{
+  transform: translate(10px,-80px);
+
+}
+
+.TransformST{
+  transform: translate(58%, -535px);
+
+}
+
+.TransformNH{
+  transform: translate(10px, -100px);
+
+}
+
+.Line{
+  transform: translate(40px,-10px);
+
+}
+
+.LineDest{
+  transform: translate(300px,-165px);
+
+}
+
+.LineNH{
+  transform: translate(0px,0px);
+  color:#e0c000;
+}
+
+.chestNH{
+  transform: translate(0px,-40px);
+background-color:#0e0f0a;
+padding:30px;
+border:solid 10px #3f413b;
+border-radius:30px;
+height:150px;
+}
+
+.Transform1{
+  transform: translate(270px,-120px);
+
+z-index:5;
+}
+.Transform2{
+  transform: translate(270px,-175px);
+z-index:5;
+padding-left:20px;
+border-radius:20px;
+}
+.Transform3{
+  transform: translate(270px,-110px);
+z-index:5;
+padding-left:20px;
+border-radius:20px;
+}
+.Transform4{
+  transform: translate(270px,-35px);
+z-index:5;
+
+padding-left:20px;
+border-radius:20px;
+}
+.Transform5{
+  transform: translate(270px,75px);
+  width:100%;
+z-index:5;
+border:solid 5px white;
+padding-left:10px;
+border-radius:20px;
+}
+
+.TypeDIV{
+background-color:#993399;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:10000px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+.Type{
+font-size:30px;
+
+
+}
+
+.Type2{
+font-size:100px;
+
+
+}
+
+.TypeDIV2{
+background-color:#dc0a2f;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:0px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+.TypeDIV3{
+background-color:blue;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:0px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+
+
+</style>
+
+
+<head>
+<title>Bus Anzeigen</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Bus.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+</head>
+
+
+
+
+<br>
+
+<body onload="Start();">
+<div class="Anzeige">
+
+
+
+<div class="Line">
+<label id="LineNummber" style="font-size:135px; color:white; font-weight:bold;"></label>
+</div>
+
+<div class="LineDest">
+<font id="LineDest" style="font-size:135px; color:white; font-weight:bold;"></font>
+</div>
+
+</div>
+
+<div style="height:180px; width:100%; " class="linec"></div>
+
+<div class="Transform1">
+<font id="NextDest1" style="font-size:60px; color:white; "></font><br>
+</div>
+<div class="Transform2">
+<font id="NextDest2" style="font-size:60px; color:#00B0F0;"></font><br>
+</div>
+<div class="Transform3">
+<font id="NextDest3" style="font-size:60px; color:#00B0F0;"></font><br>
+</div>
+<div class="Transform4">
+<font id="NextDest4" style="font-size:60px; color:#00B0F0;"></font><br>
+</div>
+<div class="Transform5" id="Transform5">
+<font id="NextDest5" style="font-size:75px; font-weight:bold; color:#00B0F0; "></font><br>
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+</body>
+
+<footer>
+
+
+<div style="transform:translate(0px,-705px);">
+<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px); z-index:4;">Next Station</button><button class="NextStation" onClick="Color();">Stop</button><button class="NextStation" onClick="CType();">Change line type</button><button class="NextStation" onClick="Umdrehen()">↩</button>
+</div>
+
+
+</footer>
+
+
+<div style="background-color:#00B0F0; height:1500px; width:250px; transform:translate(-10px,-800px); position: absolute; z-index:-1;"></div>
+<div style="background-color:#00B0F0; height:250px; width:3000px; transform:translate(-10px,-800px); position: absolute; z-index:-1;"></div>
+<div style="background-color:white; height:130px; width:130px; transform:translate(50px,-60px); position: absolute; z-index:-1; border-radius:30px;"></div>
+<div style="background-color:white; height:110px; width:110px; transform:translate(60px,-240px); position: absolute; z-index:-1; border-radius:30px;"></div>
+<div style="background-color:white; height:110px; width:110px; transform:translate(60px,-380px); position: absolute; z-index:-1; border-radius:30px;"></div>
+<div style="background-color:white; height:110px; width:110px; transform:translate(60px,-520px); position: absolute; z-index:-1; border-radius:30px;"></div>
+<div style="background-color:white; height:110px; width:110px; border-left:solid 20px #00B0F0; border-top:solid 20px #00B0F0; transform:translate(220px,-570px); position: absolute; z-index:-1; border-top-left-radius:50px;"></div>
+
+<div class="Transform6" id="Transform6" style="transform:translate(950px,-35px);">
+<font id="StopSign" style="font-size:75px; font-weight:bold; color:white; ">STOP</font><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function Start(){
+
+
+
+
+if (localStorage.getItem('Route') == '100'){
+document.getElementById('LineNummber').innerHTML = '100';
+document.getElementById('LineDest').innerHTML = 'Hochschule';
+
+
+
+}else if (localStorage.getItem('Route') == '109'){
+document.getElementById('LineNummber').innerHTML = '109';
+document.getElementById('LineDest').innerHTML = 'Hauptbahnhof';
+
+
+
+}else if (localStorage.getItem('Route') == 'Empty'){
+
+document.getElementById('LineDest').innerHTML = ' ';
+
+
+
+
+}else{
+
+document.getElementById('LineDest').innerHTML = ' ';
+
+}
+
+
+
+
+
+
+}
+</script>
+
+
+<script>
+
+function Umdrehen(){
+
+
+if (localStorage.getItem('Route') == '100'){
+if (document.getElementById('LineDest').innerHTML = 'Hochschule'){
+document.getElementById('LineDest').innerHTML = 'Stadttor';
+}else{
+document.getElementById('LineDest').innerHTML = 'Hochschule';
+}
+
+}else if(localStorage.getItem('Route') == '109'){
+
+if (document.getElementById('LineDest').innerHTML = 'Hauptbahnhof'){
+document.getElementById('LineDest').innerHTML = 'Karlplatz';
+}else{
+document.getElementById('LineDest').innerHTML = 'Hauptbahnhof';
+}
+
+}
+
+
+
+
+
+}
+</script>
+
+
+
+
+<script>
+
+if (localStorage.getItem('Route') == '100'){
+
+var array = ['','Stadttor','Altstadtmarkt','Altstadtwest','St. Annete Kirche','Rosenbogen','Rathhaus','Altstadtmitte','Waldstarße','Gasthaus Storch','Alte Ruine','Rabenberg','Alte Mühle','Donau Brücke','Westcity','Inst. für moderne Tec.','Kunstgalerie','Stadion','Raststraße','Albert Bahnhof','Citycenter One','Antoniehaus','Plz.-an-der-S. Hütte','Josefstr.','Messezentrum West','Albertz Realsch.','Graf Straße','Hauptbahnhof','Hauptbahnhof Westseite','Hochschule','','','','','','','','',''];
+var array1 = ['','','','','','Stadttor','Altstadtmarkt','Altstadtwest','St. Annete Kirche','Rosenbogen','Rathhaus','Altstadtmitte','Waldstarße','Gasthaus Storch','Alte Ruine','Rabenberg','Alte Mühle','Donau Brücke','Westcity','Inst. für moderne Tec.','Kunstgalerie','Stadion','Raststraße','Albert Bahnhof','Citycenter One','Antoniehaus','Plz.-an-der-S. Hütte','Josefstr.','Messezentrum West','Albertz Realsch.','Graf Straße','Hauptbahnhof','Hauptbahnhof Westseite','Hochschule','',''];
+var cpt1 = 5;
+var cpt2 = 4;
+var cpt3 = 3;
+var cpt4 = 2;
+var cpt5 = 1;
+var reversed = array1.reverse();
+
+document.querySelector("#NextDest1").innerHTML = array[cpt1];
+document.querySelector("#NextDest2").innerHTML = array[cpt2];
+document.querySelector("#NextDest3").innerHTML = array[cpt3];
+document.querySelector("#NextDest4").innerHTML = array[cpt4];
+document.querySelector("#NextDest5").innerHTML = array[cpt5];
+
+
+
+
+function randomQuote () 
+{
+
+if (document.getElementById("LineDest").innerHTML == 'Hochschule'){
+  if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<array.length-1)
+    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
+	
+  else
+    cpt5=0;
+
+  document.querySelector("#NextDest1").innerHTML = array[cpt1];
+document.querySelector("#NextDest2").innerHTML = array[cpt2];
+document.querySelector("#NextDest3").innerHTML = array[cpt3];
+document.querySelector("#NextDest4").innerHTML = array[cpt4];
+document.querySelector("#NextDest5").innerHTML = array[cpt5];
+document.querySelector("#Transform5").style.backgroundColor = 'white';
+document.querySelector("#NextDest5").style.color = '#00B0F0';
+  
+  }else if (document.getElementById("LineDest").innerHTML == 'Stadttor'){
+  
+ if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<reversed.length-1)
+    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
+	
+  else
+    cpt5=0;
+
+  document.querySelector("#NextDest1").innerHTML = reversed[cpt1];
+document.querySelector("#NextDest2").innerHTML = reversed[cpt2];
+document.querySelector("#NextDest3").innerHTML = reversed[cpt3];
+document.querySelector("#NextDest4").innerHTML = reversed[cpt4];
+document.querySelector("#NextDest5").innerHTML = reversed[cpt5];
+document.querySelector("#Transform5").style.backgroundColor = 'white';
+document.querySelector("#NextDest5").style.color = '#00B0F0';
+  }
+  
+} 
+
+
+
+}else if (localStorage.getItem('Route') == 'U18'){
+
+var array = ['','Essen Berliner Platz','Hirschlandplatz','Essen HBF','Bismarckplatz','Savignystr/ETEC','Hobeisenbrücke','Breslauer Str.','Wickenburgstr.','MH-RH.Ruhr-Zentrum','Rosendeller Str.','Eichbaum','Heißen Kirchen','Mühlenfeld','Christianstr.','Gracht','Von-Bock-Str.','Mülheim HBF.','','','','',''];
+var array1 = ['','','','','','Essen Berliner Platz','Hirschlandplatz','Essen HBF','Bismarckplatz','Savignystr/ETEC','Hobeisenbrücke','Breslauer Str.','Wickenburgstr.','MH-RH.Ruhr-Zentrum','Rosendeller Str.','Eichbaum','Heißen Kirchen','Mühlenfeld','Christianstr.','Gracht','Von-Bock-Str.','Mülheim HBF.','',''];
+var cpt1 = 5;
+var cpt2 = 4;
+var cpt3 = 3;
+var cpt4 = 2;
+var cpt5 = 1;
+var reversed = array1.reverse();
+
+document.querySelector("#NextDest1").innerHTML = array[cpt1];
+document.querySelector("#NextDest2").innerHTML = array[cpt2];
+document.querySelector("#NextDest3").innerHTML = array[cpt3];
+document.querySelector("#NextDest4").innerHTML = array[cpt4];
+document.querySelector("#NextDest5").innerHTML = array[cpt5];
+
+
+
+
+function randomQuote () 
+{
+
+if (document.getElementById("LineDest").innerHTML == 'Mülheim HBF.'){
+  if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<array.length-1)
+    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
+	
+  else
+    cpt5=0;
+
+  document.querySelector("#NextDest1").innerHTML = array[cpt1];
+document.querySelector("#NextDest2").innerHTML = array[cpt2];
+document.querySelector("#NextDest3").innerHTML = array[cpt3];
+document.querySelector("#NextDest4").innerHTML = array[cpt4];
+document.querySelector("#NextDest5").innerHTML = array[cpt5];
+document.querySelector("#Transform5").style.backgroundColor = 'white';
+document.querySelector("#NextDest5").style.color = '#00B0F0';
+  
+  }else if (document.getElementById("LineDest").innerHTML == 'Essen Berliner Platz'){
+  
+ if(cpt5 || cpt4 || cpt3 || cpt2 || cpt1<reversed.length-1)
+    cpt5++ && cpt4++ && cpt3++ && cpt2++ && cpt1++;
+	
+  else
+    cpt5=0;
+
+  document.querySelector("#NextDest1").innerHTML = reversed[cpt1];
+document.querySelector("#NextDest2").innerHTML = reversed[cpt2];
+document.querySelector("#NextDest3").innerHTML = reversed[cpt3];
+document.querySelector("#NextDest4").innerHTML = reversed[cpt4];
+document.querySelector("#NextDest5").innerHTML = reversed[cpt5];
+document.querySelector("#Transform5").style.backgroundColor = 'white';
+document.querySelector("#NextDest5").style.color = '#00B0F0';
+  }
+  
+} 
+
+
+
+}else {
+
+var array = ['', 'Leerfahrt', 'Betriebsfahrt', 'www.ruhrbahn.de', 'RuhrBahn', 'Bitte nicht einsteigen', 'Fahrt endet hier'];
+var cpt = 0;
+
+
+document.querySelector("#NextDest5").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+  if(cpt<array.length-1)
+    cpt++;
+  else
+    cpt=0;
+
+  document.querySelector("#NextDest5").innerHTML = array[cpt];
+}
+
+}
+
+</script>
+
+<script>
+function Color(){
+
+
+
+
+document.querySelector('#Transform5').style.backgroundColor = '#00B0F0';
+document.querySelector('#NextDest5').style.color = 'white';
+
+
+
+
+}
+
+
+
+
+
+</script>
+
+

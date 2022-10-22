@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<style>
+
+header{
+font-family:sans-serif;
+background-color:lime;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:20px;
+}
+
+body{
+font-family:arial;
+background-image: white;
+
+background-attachment: fixed;
+overflow-x:hidden;
+}
+
+.auswahl{
+padding:20px;
+font-family:sans-serif;
+}
+
+.Anzeige{
+
+
+
+
+
+
+
+}
+
+
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  
+  border-bottom: 80px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow-upNH {
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  
+  border-bottom: 50px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow{
+  transform: translate(-52px,-13px);
+}
+.TransformNHT{
+  transform: translate(227px,-78px);
+}
+
+.quadrad{
+height:68px;
+width:260px;
+background-color:black;
+
+}
+
+.section{
+height:190px;
+border-top:solid 3px black;
+}
+
+.Info{
+
+color:white;
+z-index:4;
+font-size:25px;
+
+}
+
+.InfoDIV{
+
+background-color:;
+}
+
+.Transform{
+  transform: translate(10px,-80px);
+
+}
+
+.TransformST{
+  transform: translate(58%, -535px);
+
+}
+
+.TransformNH{
+  transform: translate(10px, -100px);
+
+}
+
+.Line{
+  transform: translate(130px,-100px);
+
+}
+
+.LineNH{
+  transform: translate(0px,0px);
+  color:#e0c000;
+}
+
+.chestNH{
+  transform: translate(0px,-40px);
+background-color:#0e0f0a;
+padding:30px;
+border:solid 10px #3f413b;
+border-radius:30px;
+height:150px;
+}
+
+.icon{
+float:left;
+width:33%;
+background-color:;
+
+}
+
+.icon1{
+float:left;
+width:33%;
+background-color:;
+
+}
+
+.Stop{
+  transform: translate(0px,50px);
+
+
+}
+
+</style>
+
+
+<head>
+<title>Bus Anzeigen</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Bus.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+</head>
+
+
+
+
+
+
+<body onload="Start();">
+
+<div class="Anzeige">
+
+
+
+
+
+<img src="icons/CDD.png" id="Img">
+
+
+
+<button class="NextStation" onClick="randomQuote()">Next Station</button><button class="NextStation" onClick="Stop()">Stop</button><button class="NextStation" onClick="Umdrehen()">↩</button>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<p id="demo"></p>
+
+</div>
+
+
+
+</div>
+</body>
+
+<footer>
+
+
+
+
+<div class="Stop" id="Stop" style="display:none;">
+<div class="icon">
+
+<img src="icons/Stop.png">
+
+
+</div>
+<div class="icon1">
+
+<center>
+<label style="font-size:77px; color:red;">Wagen hält</label>
+</center>
+</div>
+<div class="icon" style="text-align:right;">
+
+
+<img src="icons/Stop.png">
+
+</div>
+</div>
+
+</footer>
+
+
+<script>
+
+function Start(){
+
+
+if (localStorage.getItem('D') == 'CS'){
+
+
+}else{
+
+
+}
+
+
+let height = screen.height;
+
+
+
+document.getElementById("Img").style.height = height - '200' + "px";
+
+}
+</script>
+
+
+
+
+
+
+
+<script>
+
+
+</script>
+
+<script>
+
+function Stop(){
+
+
+document.getElementById('Stop').style.display = 'block';
+
+
+
+
+
+
+
+
+
+
+}
+</script>

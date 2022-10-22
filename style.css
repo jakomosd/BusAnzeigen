@@ -7,6 +7,7 @@
 	border-radius:10px;
 	margin-bottom:5px;
 	color:white;
+	transition:color,border 0.2s;
 }
 
 .standart:hover{
@@ -26,6 +27,7 @@
 	background-color:white;
 	border-radius:10px;
 	margin-bottom:5px;
+	transition: background-color 0.2s;
 }
 
 .Stoag:hover{
@@ -45,6 +47,7 @@
 	background-color:white;
 	border-radius:10px;
 	margin-bottom:5px;
+	transition: background-color 0.2s;
 }
 
 .RuhrBahn:hover{
@@ -57,7 +60,23 @@
 }
 
 
+.Simplex{
+	padding:10px;
+	border:solid 1px #00B0F0;
+	background-color:white;
+	border-radius:10px;
+	margin-bottom:5px;
+	transition: background-color 0.2s;
+}
 
+.Simplex:hover{
+	padding:10px;
+	border:solid 1px #00B0F0;
+	background-color:#00B0F0;
+	border-radius:10px;
+	margin-bottom:5px;
+	color:white;
+}
 
 
 

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<style>
+
+header{
+font-family:sans-serif;
+background-color:lime;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:20px;
+}
+
+body{
+font-family:arial;
+overflow:hidden;
+}
+
+.auswahl{
+padding:20px;
+font-family:sans-serif;
+}
+
+.Anzeige{
+
+
+height:150px;
+
+
+}
+
+
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  
+  border-bottom: 80px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow-upNH {
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  
+  border-bottom: 50px solid black;
+  transform: rotate(-45deg);
+
+  
+}
+
+.arrow{
+  transform: translate(-52px,-13px);
+}
+.TransformNHT{
+  transform: translate(227px,-78px);
+}
+
+.quadrad{
+height:68px;
+width:260px;
+background-color:black;
+
+}
+
+.section{
+height:190px;
+border-top:solid 0px black;
+}
+
+.Info{
+
+color:white;
+z-index:4;
+font-size:25px;
+
+}
+
+.InfoDIV{
+
+background-color:;
+}
+
+.Transform{
+  transform: translate(10px,-80px);
+
+}
+
+.TransformST{
+  transform: translate(58%, -535px);
+
+}
+
+.TransformNH{
+  transform: translate(10px, -100px);
+
+}
+
+.Line{
+  transform: translate(40px,-10px);
+
+}
+
+.LineDest{
+  transform: translate(0px,0px);
+
+}
+
+.LineNH{
+  transform: translate(0px,0px);
+  color:#e0c000;
+}
+
+.chestNH{
+  transform: translate(0px,-40px);
+background-color:#0e0f0a;
+padding:30px;
+border:solid 10px #3f413b;
+border-radius:30px;
+height:150px;
+}
+
+.Transform1{
+  transform: translate(270px,-120px);
+  
+z-index:5;
+}
+.Transform2{
+  transform: translate(270px,-175px);
+z-index:5;
+padding-left:20px;
+border-radius:20px;
+}
+.Transform3{
+  transform: translate(270px,-110px);
+z-index:5;
+padding-left:20px;
+border-radius:20px;
+}
+.Transform4{
+  transform: translate(270px,-35px);
+z-index:5;
+
+padding-left:20px;
+border-radius:20px;
+}
+.Transform5{
+  transform: translate(270px,75px);
+  width:100%;
+z-index:5;
+border:solid 5px white;
+padding-left:10px;
+border-radius:20px;
+}
+
+.TypeDIV{
+background-color:#993399;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:10000px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+.Type{
+font-size:30px;
+
+
+}
+
+.Type2{
+font-size:100px;
+
+
+}
+
+.TypeDIV2{
+background-color:#dc0a2f;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:0px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+.TypeDIV3{
+background-color:blue;
+padding:30px;
+width:40px;
+height:40px;
+border-radius:0px;
+transform:translate(20px, -720px);
+border:solid 1px white;
+}
+
+
+
+</style>
+
+
+<head>
+<title>Bus Anzeigen</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Bus.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+</head>
+
+
+
+
+<br>
+
+<body onload="Start();">
+<div class="Anzeige">
+
+
+
+
+<div class="LineDest">
+<font id="LineDes" style="font-size:135px; color:white; font-weight:bold;">Information:</font>
+</div>
+
+</div>
+
+<div style="height:180px; width:100%; " class="linec"></div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+</body>
+
+<footer>
+
+
+<div style="transform:translate(0px,-340px);">
+<button class="NextStation" onClick="randomQuote()" style="	transform:translate(0px, 00px); z-index:4;">Next</button>
+</div>
+
+
+</footer>
+
+
+<div style="background-color:#00B0F0; height:250px; width:3000px; transform:translate(-50px,-400px); position: absolute; z-index:-1;"></div>
+
+<center>
+<div style="background-color:#00B0F0; height:550px; width:90%; border-radius:30px; transform:translate(0px,-100px);  z-index:-1; padding:10px;"><font id="NextDest5" style="font-size:75px; color:white; "></font></div>
+</center>
+
+
+
+
+
+
+
+<script>
+
+function Start(){
+
+
+
+
+if (localStorage.getItem('Route') == '122'){
+document.getElementById('LineNummber').innerHTML = '122';
+document.getElementById('LineDest').innerHTML = 'OB-City Forum';
+
+
+
+}else if (localStorage.getItem('Route') == 'U18'){
+document.getElementById('LineNummber').innerHTML = '18';
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+
+
+
+}else if (localStorage.getItem('Route') == 'Empty'){
+
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+
+
+
+
+}else{
+
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+
+}
+
+
+
+
+
+
+}
+</script>
+
+
+<script>
+
+function Umdrehen(){
+
+
+if (localStorage.getItem('Route') == '122'){
+if (document.getElementById('LineDest').innerHTML = 'OB-City Forum '){
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+}else{
+document.getElementById('LineDest').innerHTML = 'OB-City Forum ';
+}
+
+}else if(localStorage.getItem('Route') == 'U18'){
+
+if (document.getElementById('LineDest').innerHTML = 'Mülheim HBF. '){
+document.getElementById('LineDest').innerHTML = 'Essen Berliner Platz';
+}else{
+document.getElementById('LineDest').innerHTML = 'Mülheim HBF.';
+}
+
+}
+
+
+
+
+
+}
+</script>
+
+
+
+
+<script>
+
+if (localStorage.getItem('SecondScreen') == 'SIMPLEX'){
+var array = ['<b>Corona Information</b><br> Sie sind verpflichtet ihren Mund und Nase mit einer Maske zubedecken!<br><br> <b> Bleiben Sie gesund!</b>','<b>9€ Ticket</b><br> Das 9€ Ticket gilt bei uns weiterhin!', '<b>Strecken Information</b><br>Aufgrund einer Baustelle auf der Schloss Straße wird die 109 umgeleitet und fährt die Haltestelle Baumgarten bis zum 1.11.22 nicht an!'];
+var cpt = 0;
+
+
+document.querySelector("#NextDest5").innerHTML = array[cpt];
+
+function randomQuote () 
+{
+  if(cpt<array.length-1)
+    cpt++;
+  else
+    cpt=0;
+
+  document.querySelector("#NextDest5").innerHTML = array[cpt];
+}
+
+}
+
+
+</script>
+
+<script>
+function Color(){
+
+
+
+
+document.querySelector('#Transform5').style.borderColor = '#00B0F0';
+
+
+
+
+
+}
+
+
+
+
+
+</script>
+
+
